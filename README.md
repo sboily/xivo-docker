@@ -19,3 +19,5 @@ A prebuilt container is also available in the docker index
 To run the container, do the following:
 
     docker run -d -P quintana/xivo-docker
+
+If you want to using a simple webi to administrate docker use : https://github.com/crosbymichael/dockerui
