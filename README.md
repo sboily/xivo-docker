@@ -1,1 +1,21 @@
-Dockerfile for XiVO. Not working for the moment because Docker support 64 bits guest. Working when XiVO 64 bits are ready.
+Dockerfile for XiVO
+
+## Warning
+
+This dockerfile is not working for the moment because Docker support 64 bits guest. Working when XiVO 64 bits are ready.
+
+## Build
+
+To build the image, simply invoke
+
+    docker.io build github.com/sboily/xivo-docker
+
+A prebuilt container is also available in the docker index
+
+    docker.io pull quintana/xivo-docker
+  
+## Usage
+
+To run the container, do the following:
+
+    docker run -d -P quintana/xivo-docker
