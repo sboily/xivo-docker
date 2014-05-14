@@ -21,9 +21,11 @@ To run the container, do the following:
     docker.io run -d -P quintana/xivo-docker
 
 or
+
     docker.io run -i -t quintana/xivo-docker /bin/bash
 
 or
+
     docker.io run -i -t  xivo-dev /bin/bash
 
 If you want to using a simple webi to administrate docker use : https://github.com/crosbymichael/dockerui
