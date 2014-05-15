@@ -1,0 +1,9 @@
+#!/bin/bash
+
+SERVICES="spawn-fcgi nginx rabbitmq-server xivo-sysconfd xivo-confgend xivo-dxtora xivo-provd xivo-agid asterisk xivo-amid xivo-call-logs xivo-agent xivo-ctid xivo-restapi"
+
+for service in SERVICES
+do
+    echo "Launch $service ..."
+    service $service start
+done
