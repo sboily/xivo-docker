@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVICES="rsyslog spawn-fcgi nginx rabbitmq-server xivo-sysconfd xivo-confgend xivo-dxtora xivo-provd xivo-agid asterisk xivo-amid xivo-call-logs xivo-agent xivo-ctid xivo-restapi"
+SERVICES="rsyslog postgresql ssh spawn-fcgi nginx rabbitmq-server xivo-sysconfd xivo-confgend xivo-dxtora xivo-provd xivo-agid asterisk xivo-amid xivo-call-logs xivo-agent xivo-ctid xivo-restapi"
 
 echo "If this is you're first launching please type : xivo-init-db --drop --init"
 
