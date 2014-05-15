@@ -46,5 +46,4 @@ RUN /root/xivo_install_current.sh
 RUN apt-get clean
 
 EXPOSE 443 80 5003 50051
-ECHO "If you're first launch please type : xivo-init-db --drop --init"
 CMD /root/xivo-service start
