@@ -11,6 +11,7 @@ ENV HOME /root
 # Add necessary files
 ADD http://mirror.xivo.fr/fai/xivo-migration/xivo_install_current.sh /root/xivo_install_current.sh
 ADD https://raw.githubusercontent.com/sboily/xivo-docker/master/xivo-service /root/xivo-service
+ADD https://raw.githubusercontent.com/sboily/xivo-docker/master/asterisk.sql /tmp/asterisk.sql
 
 # Chmod
 RUN chmod +x /root/xivo_install_current.sh
@@ -32,7 +33,8 @@ RUN apt-get -qq -y install \
     rsyslog \
     udev \
     iptables \
-    kmod
+    kmod \
+    ssh
 
 # Update locales
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
@@ -41,6 +43,9 @@ RUN dpkg-reconfigure locales
 
 # Install XiVO
 RUN /root/xivo_install_current.sh
+
+# Fix
+RUN touch /etc/network/interfaces
 
 # Clean
 RUN apt-get clean

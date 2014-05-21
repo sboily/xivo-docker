@@ -6,7 +6,11 @@ SERVICES="rsyslog postgresql ssh spawn-fcgi nginx \
           xivo-amid xivo-call-logs xivo-agent \
           xivo-ctid xivo-restapi"
 
+DATADIR="/var/lib/postgresql/9.1/main"
+
 function init {
+    echo "Creating Postgres data at $DATADIR"
+    su - postgres -c "psql template1 < /tmp/asterisk.sql"
     xivo-init-db --drop --init
 }
 
@@ -18,11 +22,8 @@ function start {
     done
 }
 
-
-
 start
 
-if [ ! -z $INIT ]
-then
+if [ ! -d $DATADIR ]; then
     init
 fi
