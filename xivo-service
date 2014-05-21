@@ -10,6 +10,7 @@ DATADIR="/var/lib/postgresql/9.1/main"
 
 function init {
     echo "Creating Postgres data at $DATADIR"
+    chmod 755 /tmp/asterisk.sql
     su - postgres -c "psql template1 < /tmp/asterisk.sql"
     xivo-init-db --drop --init
 }
@@ -22,8 +23,10 @@ function start {
     done
 }
 
+sed -i -e 's/MAXFILES=8192/MAXFILES=/g' /etc/init.d/asterisk
 start
 
-if [ ! -d $DATADIR ]; then
+if ! su - postgres -c "psql -l | grep asterisk" 2>&1 > /dev/null
+then
     init
 fi
