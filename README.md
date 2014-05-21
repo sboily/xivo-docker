@@ -30,3 +30,7 @@ After launch xivo-service in /root directory.
     ./xivo-service
 
 If you want to using a simple webi to administrate docker use : https://github.com/crosbymichael/dockerui
+
+## Infos
+
+Using docker version 9.1 on ubuntu 14.04.
