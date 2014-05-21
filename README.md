@@ -1,9 +1,5 @@
 Dockerfile for XiVO
 
-## Warning
-
-This dockerfile install XiVO in dev version.
-
 ## Build
 
 To build the image, simply invoke
