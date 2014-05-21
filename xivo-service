@@ -1,11 +1,28 @@
 #!/bin/bash
 
-SERVICES="rsyslog postgresql ssh spawn-fcgi nginx rabbitmq-server xivo-sysconfd xivo-confgend xivo-dxtora xivo-provd xivo-agid asterisk xivo-amid xivo-call-logs xivo-agent xivo-ctid xivo-restapi"
+SERVICES="rsyslog postgresql ssh spawn-fcgi nginx \
+          rabbitmq-server xivo-sysconfd xivo-confgend \
+          xivo-dxtora xivo-provd xivo-agid asterisk \
+          xivo-amid xivo-call-logs xivo-agent \
+          xivo-ctid xivo-restapi"
 
-echo "If this is you're first launching please type : xivo-init-db --drop --init"
+function init {
+    xivo-init-db --drop --init
+}
 
-for service in $SERVICES
-do
-    echo "Launch $service ..."
-    service $service start
-done
+function start {
+    for service in $SERVICES
+    do
+        echo "Launch $service ..."
+        service $service start
+    done
+}
+
+
+
+start
+
+if [ ! -z $INIT ]
+then
+    init
+fi
