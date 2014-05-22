@@ -30,7 +30,12 @@ function fix_asterisk_init {
     sed -i -e 's/MAXFILES=8192/MAXFILES=/g' /etc/init.d/asterisk
 }
 
+function fix_dahdi_init {
+    echo -e '#!/bin/sh\n\nexit 0' > /etc/init.d/dahdi
+}
+
 # Main
 fix_asterisk_init
+fix_dahdi_init
 start
 init_data

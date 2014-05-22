@@ -48,9 +48,11 @@ RUN /root/xivo_install_current.sh
 RUN rm /usr/sbin/policy-rc.d
 RUN touch /etc/network/interfaces
 
+# Set password
+RUN echo "root:xivo" | chpasswd
 
 # Clean
 RUN apt-get clean
 
-EXPOSE 443 80 5003 50051
+EXPOSE 22 80 443 5003 50051
 CMD ["/root/xivo-service"]
