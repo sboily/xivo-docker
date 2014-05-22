@@ -1,5 +1,15 @@
 Dockerfile for XiVO
 
+## Install Docker
+
+To install docker on Linux :
+
+    curl -sL https://get.docker.io/ | sh
+ 
+ or
+ 
+     wget -qO- https://get.docker.io/ | sh
+
 ## Build
 
 To build the image, simply invoke
@@ -43,13 +53,3 @@ To get the IP of your container use :
 
     docker ps -a
     docker inspect <container_id> | grep IPAddress | awk -F\" '{print $4}'
-
-## Install Docker
-
-To install docker on Linux :
-
-    curl -sL https://get.docker.io/ | sh
- 
- or
- 
-     wget -qO- https://get.docker.io/ | sh
