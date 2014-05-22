@@ -4,7 +4,7 @@ SERVICES="rsyslog postgresql ssh spawn-fcgi nginx \
           rabbitmq-server xivo-sysconfd xivo-confgend \
           xivo-dxtora xivo-provd xivo-agid asterisk \
           xivo-amid xivo-call-logs xivo-agent \
-          xivo-ctid xivo-restapi"
+          xivo-ctid xivo-restapi ntp"
 
 # Func
 function init_data {
@@ -43,4 +43,8 @@ fix_asterisk_init
 fix_dahdi_init
 start
 init_data
-loop_log
+
+if [ ! -z $1 ]
+then
+    loop_log
+fi

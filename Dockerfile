@@ -55,4 +55,4 @@ RUN echo "root:xivo" | chpasswd
 RUN apt-get clean
 
 EXPOSE 22 80 443 5003 50051
-CMD ["/root/xivo-service"]
+CMD ["/root/xivo-service", "loop"]
