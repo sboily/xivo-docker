@@ -41,4 +41,5 @@ After launch xivo-service in /root directory.
 
 To get the IP of your container use :
 
+    docker.io ps -a
     docker.io inspect <container_id> | grep IPAddress | awk -F\" '{print $4}'
