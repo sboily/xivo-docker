@@ -35,7 +35,7 @@ After launch xivo-service in /root directory.
 
 ## Infos
 
-- Using docker version 9.1 on ubuntu 14.04.
+- Using docker version 0.9.1 or 0.11.1 (from get.docker.io) on ubuntu 14.04.
 - The root password is xivo by default.
 - If you want to using a simple webi to administrate docker use : https://github.com/crosbymichael/dockerui
 
