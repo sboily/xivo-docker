@@ -53,6 +53,7 @@ RUN echo "root:xivo" | chpasswd
 
 # Clean
 RUN apt-get clean
+RUN rm /root/xivo_install_current.sh
 
 EXPOSE 22 80 443 5003 50051
 CMD ["/root/xivo-service", "loop"]
