@@ -34,8 +34,13 @@ function fix_dahdi_init {
     echo -e '#!/bin/sh\n\nexit 0' > /etc/init.d/dahdi
 }
 
+function loop_log {
+    tail -f /var/log/daemon.log
+}
+
 # Main
 fix_asterisk_init
 fix_dahdi_init
 start
 init_data
+loop_log
