@@ -4,7 +4,7 @@ SERVICES="rsyslog postgresql ssh spawn-fcgi nginx \
           rabbitmq-server xivo-sysconfd xivo-confgend \
           xivo-dxtora xivo-provd xivo-agid asterisk \
           xivo-amid xivo-call-logs xivo-agent \
-          xivo-ctid xivo-restapi ntp"
+          xivo-ctid xivo-restapi ntp munin-node"
 
 # Func
 function init_data {
