@@ -53,4 +53,4 @@ RUN touch /etc/network/interfaces
 RUN apt-get clean
 
 EXPOSE 443 80 5003 50051
-CMD /root/xivo-service start
+CMD ["/root/xivo-service"]
