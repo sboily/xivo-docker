@@ -35,7 +35,12 @@ function fix_dahdi_init {
 }
 
 function main_loop {
-    /bin/login
+    while true
+    do
+        echo "Welcome to XiVO !"
+        echo "Please use ssh to log in your XiVO server."
+        sleep 5
+    done
 }
 
 # Main
