@@ -6,10 +6,13 @@ SERVICES="rsyslog postgresql ssh spawn-fcgi nginx \
           xivo-amid xivo-call-logs xivo-agent \
           xivo-ctid xivo-restapi"
 
-DATADIR="/var/lib/postgresql/9.1/main"
-
-function init {
-    echo "Creating Postgres data at $DATADIR"
+# Func
+function init_data {
+    if su - postgres -c "psql -l | grep asterisk" 2>&1 > /dev/null
+    then
+        return
+    fi
+    echo "Importing XiVO data ..."
     chmod 755 /tmp/asterisk.sql
     su - postgres -c "psql template1 < /tmp/asterisk.sql"
     xivo-init-db --drop --init
@@ -23,10 +26,11 @@ function start {
     done
 }
 
-sed -i -e 's/MAXFILES=8192/MAXFILES=/g' /etc/init.d/asterisk
-start
+function fix_asterisk_init {
+    sed -i -e 's/MAXFILES=8192/MAXFILES=/g' /etc/init.d/asterisk
+}
 
-if ! su - postgres -c "psql -l | grep asterisk" 2>&1 > /dev/null
-then
-    init
-fi
+# Main
+fix_asterisk_init
+start
+init_data
