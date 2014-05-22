@@ -37,8 +37,8 @@ After launch xivo-service in /root directory.
 
 - Using docker version 9.1 on ubuntu 14.04.
 - The root password is xivo by default.
-- To get the IP of your container use :
+- If you want to using a simple webi to administrate docker use : https://github.com/crosbymichael/dockerui
+
+To get the IP of your container use :
 
     docker.io inspect <container_id> | grep IPAddress | awk -F\" '{print $4}'
-
-- If you want to using a simple webi to administrate docker use : https://github.com/crosbymichael/dockerui
