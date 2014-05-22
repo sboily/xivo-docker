@@ -4,29 +4,29 @@ Dockerfile for XiVO
 
 To build the image, simply invoke
 
-    docker.io build -t xivo-docker github.com/sboily/xivo-docker
+    docker build -t xivo-docker github.com/sboily/xivo-docker
 
 A prebuilt container is also available in the docker index
 
-    docker.io pull quintana/xivo-docker
+    docker pull quintana/xivo-docker
   
 ## Usage
 
 To run the container, do the following:
 
-    docker.io run -d -P xivo-docker
+    docker run -d -P xivo-docker
 
 or
 
-    docker.io run -d -P quintana/xivo-docker
-
+    docker run -d -P quintana/xivo-docker
+    
 On interactive mode :
 
-    docker.io run -i -t quintana/xivo-docker /bin/bash
+    docker run -i -t quintana/xivo-docker /bin/bash
 
 or
 
-    docker.io run -i -t  xivo-docker /bin/bash
+    docker run -i -t  xivo-docker /bin/bash
 
 After launch xivo-service in /root directory.
 
@@ -35,14 +35,14 @@ After launch xivo-service in /root directory.
 
 ## Infos
 
-- Using docker version 0.9.1 or 0.11.1 (from get.docker.io) on ubuntu 14.04.
+- Using docker version 0.11.1 (from get.docker.io) on ubuntu 14.04.
 - The root password is xivo by default.
 - If you want to using a simple webi to administrate docker use : https://github.com/crosbymichael/dockerui
 
 To get the IP of your container use :
 
-    docker.io ps -a
-    docker.io inspect <container_id> | grep IPAddress | awk -F\" '{print $4}'
+    docker ps -a
+    docker inspect <container_id> | grep IPAddress | awk -F\" '{print $4}'
 
 ## Install Docker
 
