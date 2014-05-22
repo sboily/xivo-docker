@@ -34,8 +34,8 @@ function fix_dahdi_init {
     echo -e '#!/bin/sh\n\nexit 0' > /etc/init.d/dahdi
 }
 
-function loop_log {
-    tail -f /var/log/daemon.log
+function main_loop {
+    /bin/login
 }
 
 # Main
@@ -46,5 +46,5 @@ init_data
 
 if [ ! -z $1 ]
 then
-    loop_log
+    main_loop
 fi
