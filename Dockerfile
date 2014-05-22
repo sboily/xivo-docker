@@ -10,8 +10,8 @@ ENV HOME /root
 
 # Add necessary files
 ADD http://mirror.xivo.fr/fai/xivo-migration/xivo_install_current.sh /root/xivo_install_current.sh
-ADD https://raw.githubusercontent.com/sboily/xivo-docker/master/xivo-service /root/xivo-service
-ADD https://raw.githubusercontent.com/sboily/xivo-docker/master/asterisk.sql /tmp/asterisk.sql
+ADD xivo-service /root/xivo-service
+ADD asterisk.sql /tmp/asterisk.sql
 
 # Chmod
 RUN chmod +x /root/xivo_install_current.sh
