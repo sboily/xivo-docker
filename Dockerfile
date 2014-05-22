@@ -23,10 +23,6 @@ RUN echo "deb http://http.debian.net/debian wheezy non-free" >> /etc/apt/sources
 # Update repo
 RUN apt-get -qq update
 
-# Fix
-RUN rm /usr/sbin/policy-rc.d
-RUN touch /etc/network/interfaces
-
 # Install the needed packages
 RUN apt-get -qq -y install \
     apt-utils \
@@ -47,6 +43,11 @@ RUN dpkg-reconfigure locales
 
 # Install XiVO
 RUN /root/xivo_install_current.sh
+
+# Fix
+RUN rm /usr/sbin/policy-rc.d
+RUN touch /etc/network/interfaces
+
 
 # Clean
 RUN apt-get clean
