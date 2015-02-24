@@ -7,7 +7,7 @@ confgend: done
 sysconfd:
 provd: done
 dxtora:
-call-logd:
+call-logd: done
 amid: done
 nginx/php5/webi:
 asterisk11: done
