@@ -1,0 +1,24 @@
+ctid: done
+dird: done
+confd: done
+agid: done
+agentd: 
+confgend: done
+sysconfd:
+provd: done
+dxtora:
+call-logd:
+amid: done
+nginx/php5/webi:
+asterisk11: done
+
+postgres
+rabbitmq
+rsyslogd
+dhcpd
+monit
+ntpd
+fail2ban
+postfix
+crontab
+munin
