@@ -1,0 +1,88 @@
+ctid:
+  image: quintana/ctid
+  ports:
+   - "5003:5003"
+   - "5004:5004"
+  links:
+   - db
+   - bus
+   - dird
+   - asterisk
+dird:
+  image: quintana/dird
+  ports:
+   - "9489:9489"
+  links:
+   - confd
+confd:
+  image: quintana/confd
+  ports:
+   - "9486:9486"
+  links:
+   - db
+   - bus
+   - provd
+agid:
+  image: quintana/agid
+  ports:
+   - "4573:4573"
+  links:
+   - db
+agentd:
+  image: quintana/agentd
+  ports:
+   - "9486:9486"
+confgend:
+  image: quintana/confgend
+  ports:
+   - "8669:8669"
+  links:
+   - db
+sysconfd:
+  image: quintana/sysconfd
+  ports:
+   - "8668:8668"
+  links:
+   - bus
+provd:
+  image: quintana/provd
+  ports:
+   - "8667:8667"
+   - "8666:8666"
+   - "69:69/udp"
+dxtora:
+  image: quintana/dxtora
+call-logd:
+  image: quintana/call-logd
+amid:
+  image: quintana/amid
+  links:
+   - asterisk
+   - bus
+webi:
+  image: quintana/webi
+  ports:
+   - "80:80"
+   - "443:443"
+  links:
+   - db
+   - sysconfd
+   - confd
+   - provd
+asterisk:
+  image: quintana/asterisk11
+  ports:
+   - "5060:5060/udp"
+   - "2000:2000"
+  links:
+   - confgend
+  expose:
+   - "5038"
+db:
+  image: postgres
+  expose:
+   - "5432"
+bus:
+  image: dockerfile/rabbitmq
+  expose:
+   - "5672"
