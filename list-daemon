@@ -4,9 +4,9 @@ confd: done
 agid: done
 agentd: 
 confgend: done
-sysconfd:
+sysconfd: done
 provd: done
-dxtora:
+dxtora: done
 call-logd: done
 amid: done
 nginx/php5/webi:
