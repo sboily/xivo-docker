@@ -9,7 +9,7 @@ provd: done
 dxtora: done
 call-logd: done
 amid: done
-nginx/php5/webi:
+nginx/php5/webi: done
 asterisk11: done
 
 postgres
