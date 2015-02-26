@@ -9,6 +9,7 @@ ctid:
    - bus
    - dird
    - asterisk
+   - provd
 dird:
   image: quintana/dird
   ports:
