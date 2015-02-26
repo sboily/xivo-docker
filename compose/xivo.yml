@@ -10,6 +10,7 @@ ctid:
    - dird
    - asterisk
    - provd
+   - agentd
 dird:
   image: quintana/dird
   ports:
