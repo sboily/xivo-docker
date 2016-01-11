@@ -1,6 +1,6 @@
 Dockerfile for XiVO
 
-Please note this is only a POC to playing with docker.
+Please note this is only a POC for playing with docker.
 
 ## Install Docker
 
