@@ -1,5 +1,7 @@
 Dockerfile for XiVO
 
+Please note this is only a POC to playing with docker.
+
 ## Install Docker
 
 To install docker on Linux :
