@@ -1,10 +1,9 @@
 #!/bin/bash
 
-SERVICES="rsyslog postgresql ssh spawn-fcgi nginx \
-          rabbitmq-server xivo-sysconfd xivo-confgend \
-          xivo-dxtora xivo-provd xivo-agid asterisk \
-          xivo-amid xivo-call-logs xivo-agent \
-          xivo-ctid xivo-restapi ntp munin-node"
+SERVICES="rsyslog postgresql spawn-fcgi nginx \
+          rabbitmq-server xivo-sysconfd \
+          xivo-provd asterisk \
+          ntp munin-node consul xivo-confd"
 
 # Func
 function init_data {
@@ -38,7 +37,6 @@ function main_loop {
     while true
     do
         echo "Welcome to XiVO !"
-        echo "Please use ssh to log in your XiVO server."
         sleep 5
     done
 }
